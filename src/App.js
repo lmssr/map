@@ -24,10 +24,10 @@ class App extends React.Component {
         <ReactMapGL
           ref={this.myMap}
           {...this.state.viewport}
-          width="100vw"
-          height="100vh"
+          width="50vw"
+          height="50vh"
           onViewportChange={viewport => this.setState({ viewport })}
-          mapStyle="mapbox://styles/mapbox/satellite-v9"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
           mapboxApiAccessToken="pk.eyJ1IjoibG1zc3IiLCJhIjoiY2swNnF6eGRqMzNodDNpcWR2MTN1Y2pnZSJ9.-Cdm2-HPW8myBQjzq3AO4Q"
         >
           <Geocoder
@@ -37,6 +37,13 @@ class App extends React.Component {
           <GeolocateControl />
           <NavigationControl showCompass={false} showZoom={false}/>
         </ReactMapGL>
+        <form>
+          <label>
+          Distance :
+          <input type="integer" name="name" />
+          </label>
+          <input type="submit" value="Create a route" />
+        </form>
       </div>
       )
   }
